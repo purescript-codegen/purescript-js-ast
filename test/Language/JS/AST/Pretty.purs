@@ -27,5 +27,3 @@ suite = Test.suite "Data.List.Pointed" $ do
       ]
   test "plain" do
     equal s (print1 obj)
-  -- test "fold" do
-  --   equal 8 9

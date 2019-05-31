@@ -270,14 +270,14 @@ prettyStatements sts = do
   indentString ← currentIndent
   pure $ joinWith "\n" $ map (\s → indentString <> s <> ";") jss
 
--- -- |
--- -- Generate a pretty-printed string representing a Javascript expression
--- --
+-- |
+-- Generate a pretty-printed string representing a Javascript expression
+--
 print1 ∷ JS → String
 print1 js = unsafePartial $ fromJust $ evalStateT (print' js) (Indent 0)
 
--- -- |
--- -- Generate a pretty-printed string representing a collection of Javascript expressions at the same indentation level
--- --
+-- |
+-- Generate a pretty-printed string representing a collection of Javascript expressions at the same indentation level
+--
 print ∷ Array JS → String
 print jss = unsafePartial $ fromJust $ evalStateT (prettyStatements jss) (Indent 0)
