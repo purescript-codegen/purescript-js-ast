@@ -11,7 +11,7 @@ import Test.Unit (suite) as Test
 import Test.Unit.Assert (equal)
 
 suite ∷ TestSuite
-suite = Test.suite "Data.List.Pointed" $ do
+suite = Test.suite "Language.JS.AST.Pretty" $ do
   let
     obj = JSObjectLiteral
       [ Tuple "string" $ JSStringLiteral "value"
