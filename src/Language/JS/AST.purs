@@ -1,4 +1,4 @@
-module Js.Ast where
+module Language.JS.AST where
 
 import Prelude
 

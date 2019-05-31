@@ -1,0 +1,22 @@
+{
+  "name": "purescript-js-ast",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "output"
+  ],
+  "dependencies": {
+    "purescript-arrow-patterns": "https://github.com/paluh/purescript-pattern-arrows.git#master",
+    "purescript-prelude": "^4.1.1",
+    "purescript-console": "^4.2.0",
+    "purescript-effect": "^2.0.1",
+    "purescript-arrays": "^5.3.0",
+    "purescript-transformers": "^4.2.0",
+    "purescript-strings": "^4.0.1"
+  },
+  "devDependencies": {
+    "purescript-psci-support": "^4.0.0",
+    "purescript-test-unit": "^15.0.0"
+  }
+}
