@@ -6,10 +6,11 @@ import Data.String (joinWith)
 import Data.Tuple (Tuple(..))
 import Language.JS.AST (JS(..))
 import Language.JS.Pretty (print1)
+import Test.Unit (TestSuite, test)
 import Test.Unit (suite) as Test
-import Test.Unit (test)
 import Test.Unit.Assert (equal)
 
+suite ∷ TestSuite
 suite = Test.suite "Data.List.Pointed" $ do
   let
     obj = JSObjectLiteral
