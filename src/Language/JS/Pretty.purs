@@ -193,7 +193,7 @@ literals = defer $ \_ → mkPattern' match
     , maybe (pure "") ((<$>) (\s → " else " <> s) <<< print') elses
     ]
   match (JSReturn value) = joinWith "" <$> sequence
-    [ pure "pure "
+    [ pure "return "
     , print' value
     ]
   match (JSThrow value) = joinWith "" <$> sequence
