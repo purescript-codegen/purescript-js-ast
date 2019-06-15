@@ -123,6 +123,7 @@ literals ∷ Pattern String
 literals = defer $ \_ → mkPattern' match
   where
   match ∷ JS → PatternM String
+  match JSNullLiteral = pure $ "null"
   match (JSNumericLiteral n) = pure $ show n
   match (JSStringLiteral s) = pure $ string s
   match (JSBooleanLiteral true) = pure "true"

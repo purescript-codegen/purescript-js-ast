@@ -168,10 +168,11 @@ instance eqBinaryOperator :: Eq BinaryOperator where
 -- Data type for simplified Javascript expressions
 --
 data JS
+  = JSNullLiteral
   -- |
   -- A numeric literal
   --
-  = JSNumericLiteral Number
+  | JSNumericLiteral Number
   -- |
   -- A string literal
   --
@@ -274,6 +275,7 @@ data JS
   | JSContinue String
 
 instance showJS :: Show JS where
+  show (JSNullLiteral) = "JSNullLiteral"
   show (JSNumericLiteral n) = "JSNumericLiteral (" <> show n <> ")"
   show (JSStringLiteral s) = "JSStringLiteral (" <> show s <> ")"
   show (JSBooleanLiteral b) = "JSBooleanLiteral (" <> show b <> ")"
@@ -302,6 +304,7 @@ instance showJS :: Show JS where
   show (JSContinue lbl) = "JSContinue (" <> show lbl <> ")"
 
 instance eqJS :: Eq JS where
+  eq JSNullLiteral JSNullLiteral = true
   eq (JSNumericLiteral n1) (JSNumericLiteral n2) = n1 == n2
   eq (JSStringLiteral s1) (JSStringLiteral s2) = s1 == s2
   eq (JSBooleanLiteral b1) (JSBooleanLiteral b2) = b1 == b2
